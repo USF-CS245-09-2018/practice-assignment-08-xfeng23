@@ -18,6 +18,19 @@ public class LinkedList implements List {
 
 	}
 
+	public Node getNode(int pos) {
+		if(pos<0||pos>size){
+		      throw new IndexOutOfBoundsException("Index is not in the list");
+		    }
+		      
+		   	Node current = head;
+				for(int i=0; i<pos; i++){
+		      current=current.next;
+		    }
+		    return current;
+
+	}
+	
 	@Override
 	public void add(int pos, Object obj) throws Exception {
 		if (pos < 0 || pos > size) {
@@ -45,18 +58,7 @@ public class LinkedList implements List {
 	    return node.getValue();
 	  }
 	
-	public Object getNode(int pos) {
-		if(pos<0||pos>size){
-		      throw new IndexOutOfBoundsException("Index is not in the list");
-		    }
-		      
-		   	Node current = head;
-				for(int i=0; i<pos; i++){
-		      current=current.next;
-		    }
-		    return current;
-
-	}
+	
 
 	@Override
 	public Object remove(int pos) throws Exception {
